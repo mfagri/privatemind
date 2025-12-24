@@ -1,4 +1,5 @@
 import { FileText, Pencil, Globe, Mail, CheckCircle, ImageIcon } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const tools = [
   {
@@ -52,6 +53,9 @@ const tools = [
 ];
 
 const ToolsSection = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({ threshold: 0.05 });
+
   return (
     <section id="tools" className="py-20 md:py-32 bg-muted/30 relative">
       {/* Background pattern */}
@@ -59,7 +63,12 @@ const ToolsSection = () => {
       
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+        <div
+          ref={headerRef}
+          className={`text-center max-w-3xl mx-auto mb-16 md:mb-20 transition-all duration-700 ${
+            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">AI Tools</span>
           <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">
             Powerful Utilities at Your{" "}
@@ -71,11 +80,14 @@ const ToolsSection = () => {
         </div>
 
         {/* Tools grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {tools.map((tool, index) => (
             <div
               key={tool.title}
-              className="group bg-card border border-border rounded-xl overflow-hidden hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5"
+              className={`group bg-card border border-border rounded-xl overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5 ${
+                gridVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="p-6">
                 <div className="flex items-start gap-4">

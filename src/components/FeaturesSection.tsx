@@ -1,4 +1,5 @@
 import { Shield, Zap, Mic, Wifi, Lock, Cpu } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const features = [
   {
@@ -52,11 +53,19 @@ const features = [
 ];
 
 const FeaturesSection = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({ threshold: 0.05 });
+
   return (
     <section id="features" className="py-20 md:py-32 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+        <div
+          ref={headerRef}
+          className={`text-center max-w-3xl mx-auto mb-16 md:mb-20 transition-all duration-700 ${
+            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">Features</span>
           <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">
             AI That Respects Your{" "}
@@ -68,12 +77,14 @@ const FeaturesSection = () => {
         </div>
 
         {/* Features grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className={`${feature.gradient} p-6 md:p-8 group hover:scale-[1.02] transition-all duration-300`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`${feature.gradient} p-6 md:p-8 group hover:scale-[1.02] transition-all duration-500 ${
+                gridVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="relative z-10">
                 <div className={`w-14 h-14 rounded-xl ${feature.iconBg} flex items-center justify-center mb-6`}>

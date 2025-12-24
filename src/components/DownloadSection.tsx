@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Apple, Star } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const DownloadSection = () => {
+  const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
+
   return (
     <section id="download" className="py-20 md:py-32 relative overflow-hidden">
       {/* Background */}
@@ -9,9 +12,19 @@ const DownloadSection = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center">
+        <div
+          ref={contentRef}
+          className={`max-w-3xl mx-auto text-center transition-all duration-700 ${
+            contentVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+          }`}
+        >
           {/* Rating */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border mb-8">
+          <div
+            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border mb-8 transition-all duration-500 ${
+              contentVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: "100ms" }}
+          >
             <div className="flex">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-4 h-4 text-orange fill-orange" />
@@ -20,17 +33,32 @@ const DownloadSection = () => {
             <span className="text-sm text-muted-foreground">Loved by privacy-conscious users</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
+          <h2
+            className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground transition-all duration-500 ${
+              contentVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: "200ms" }}
+          >
             Ready to Take Your{" "}
             <span className="text-gradient-primary">Privacy Back</span>?
           </h2>
           
-          <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
+          <p
+            className={`mt-6 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto transition-all duration-500 ${
+              contentVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: "300ms" }}
+          >
             Download PrivateMind today and experience the freedom of AI that truly respects your privacy.
           </p>
 
           {/* Download button */}
-          <div className="mt-10">
+          <div
+            className={`mt-10 transition-all duration-500 ${
+              contentVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: "400ms" }}
+          >
             <Button variant="appStore" size="xl" asChild className="text-lg px-12">
               <a 
                 href="https://apps.apple.com/us/app/private-mind-offline-ai-chat/id6754819594" 
@@ -45,7 +73,12 @@ const DownloadSection = () => {
           </div>
 
           {/* Trust badges */}
-          <div className="mt-12 flex flex-wrap justify-center gap-8 text-sm text-muted-foreground">
+          <div
+            className={`mt-12 flex flex-wrap justify-center gap-8 text-sm text-muted-foreground transition-all duration-500 ${
+              contentVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: "500ms" }}
+          >
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-green" />
               Free to Download

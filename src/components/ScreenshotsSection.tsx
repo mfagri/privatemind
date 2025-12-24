@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, MessageSquare, Wrench, Mic, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 import screenshotChat from "@/assets/screenshot-chat.png";
 import screenshotSettings from "@/assets/screenshot-settings.png";
@@ -65,6 +66,9 @@ const ScreenshotsSection = () => {
 
   const colors = colorClasses[activeScreenshot.color as keyof typeof colorClasses];
 
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return (
     <section className="py-20 md:py-32 bg-muted/20 relative overflow-hidden">
       {/* Background decorations */}
@@ -73,7 +77,12 @@ const ScreenshotsSection = () => {
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+        <div
+          ref={headerRef}
+          className={`text-center max-w-3xl mx-auto mb-12 md:mb-16 transition-all duration-700 ${
+            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">App Preview</span>
           <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">
             See PrivateMind in{" "}
@@ -85,7 +94,12 @@ const ScreenshotsSection = () => {
         </div>
 
         {/* Carousel */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div
+          ref={contentRef}
+          className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center transition-all duration-700 delay-200 ${
+            contentVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           {/* Phone mockup */}
           <div className="relative flex justify-center order-1 lg:order-1">
             <div className="relative">
