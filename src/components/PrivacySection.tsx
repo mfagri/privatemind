@@ -1,6 +1,10 @@
 import { Shield, Server, Eye, Database, Cloud, Lock } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const PrivacySection = () => {
+  const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
+  const { ref: visualRef, isVisible: visualVisible } = useScrollAnimation();
+
   return (
     <section id="privacy" className="py-20 md:py-32 relative overflow-hidden">
       {/* Decorative background */}
@@ -10,7 +14,12 @@ const PrivacySection = () => {
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
-          <div className="space-y-8">
+          <div
+            ref={contentRef}
+            className={`space-y-8 transition-all duration-700 ${
+              contentVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+            }`}
+          >
             <div>
               <span className="text-primary font-semibold text-sm uppercase tracking-wider">Privacy First</span>
               <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">
@@ -24,7 +33,12 @@ const PrivacySection = () => {
 
             <div className="space-y-6">
               {/* Privacy points */}
-              <div className="flex gap-4">
+              <div
+                className={`flex gap-4 transition-all duration-500 ${
+                  contentVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+                }`}
+                style={{ transitionDelay: "100ms" }}
+              >
                 <div className="w-12 h-12 rounded-xl bg-teal/10 flex items-center justify-center shrink-0">
                   <Server className="w-6 h-6 text-teal" />
                 </div>
@@ -34,7 +48,12 @@ const PrivacySection = () => {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div
+                className={`flex gap-4 transition-all duration-500 ${
+                  contentVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+                }`}
+                style={{ transitionDelay: "200ms" }}
+              >
                 <div className="w-12 h-12 rounded-xl bg-purple/10 flex items-center justify-center shrink-0">
                   <Eye className="w-6 h-6 text-purple" />
                 </div>
@@ -44,7 +63,12 @@ const PrivacySection = () => {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div
+                className={`flex gap-4 transition-all duration-500 ${
+                  contentVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+                }`}
+                style={{ transitionDelay: "300ms" }}
+              >
                 <div className="w-12 h-12 rounded-xl bg-green/10 flex items-center justify-center shrink-0">
                   <Database className="w-6 h-6 text-green" />
                 </div>
@@ -57,7 +81,12 @@ const PrivacySection = () => {
           </div>
 
           {/* Visual */}
-          <div className="relative">
+          <div
+            ref={visualRef}
+            className={`relative transition-all duration-700 delay-200 ${
+              visualVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+            }`}
+          >
             <div className="relative bg-card border border-border rounded-2xl p-8 md:p-12">
               {/* Shield icon */}
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/10 rounded-2xl flex items-center justify-center glow-primary">

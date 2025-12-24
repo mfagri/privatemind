@@ -1,4 +1,5 @@
 import { Star, Quote } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const testimonials = [
   {
@@ -52,6 +53,10 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({ threshold: 0.05 });
+  const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation();
+
   return (
     <section className="py-20 md:py-32 relative overflow-hidden">
       {/* Background decorations */}
@@ -60,7 +65,12 @@ const TestimonialsSection = () => {
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+        <div
+          ref={headerRef}
+          className={`text-center max-w-3xl mx-auto mb-12 md:mb-16 transition-all duration-700 ${
+            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">Testimonials</span>
           <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">
             Loved by{" "}
@@ -72,12 +82,14 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Testimonials grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
-              className="group bg-card border border-border rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 relative"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`group bg-card border border-border rounded-2xl p-6 hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5 relative ${
+                gridVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Quote icon */}
               <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center opacity-50 group-hover:opacity-100 transition-opacity">
@@ -120,14 +132,23 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div
+          ref={statsRef}
+          className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 transition-all duration-700 ${
+            statsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           {[
             { value: "10K+", label: "Happy Users" },
             { value: "4.9", label: "App Store Rating" },
             { value: "100%", label: "Private & Secure" },
             { value: "0", label: "Data Collected" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
+          ].map((stat, index) => (
+            <div
+              key={stat.label}
+              className="text-center transition-all duration-500"
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
               <p className="text-3xl md:text-4xl font-bold text-gradient-primary">{stat.value}</p>
               <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
             </div>
