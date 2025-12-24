@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Apple, Shield, Zap, Mic } from "lucide-react";
-import heroMascot from "@/assets/hero-mascot.png";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
@@ -18,79 +17,61 @@ const HeroSection = () => {
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Content */}
-          <div className="text-center lg:text-left space-y-8 animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
-              <Shield className="w-4 h-4" />
-              100% Offline & Private
-            </div>
-            
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
-              Your Private{" "}
-              <span className="text-gradient-primary">AI Assistant</span>
-            </h1>
-            
-            <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
-              Experience the power of AI without compromising your privacy. All processing happens on your device — no data ever leaves your phone.
-            </p>
+        <div className="max-w-3xl mx-auto text-center space-y-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
+            <Shield className="w-4 h-4" />
+            100% Offline & Private
+          </div>
+          
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+            Your Private{" "}
+            <span className="text-gradient-primary">AI Assistant</span>
+          </h1>
+          
+          <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
+            Experience the power of AI without compromising your privacy. All processing happens on your device — no data ever leaves your phone.
+          </p>
 
-            {/* Key features */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <div className="w-8 h-8 rounded-lg bg-teal/10 flex items-center justify-center">
-                  <Shield className="w-4 h-4 text-teal" />
-                </div>
-                100% Private
+          {/* Key features */}
+          <div className="flex flex-wrap justify-center gap-6">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="w-8 h-8 rounded-lg bg-teal/10 flex items-center justify-center">
+                <Shield className="w-4 h-4 text-teal" />
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <div className="w-8 h-8 rounded-lg bg-purple/10 flex items-center justify-center">
-                  <Zap className="w-4 h-4 text-purple" />
-                </div>
-                Blazing Fast
-              </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <div className="w-8 h-8 rounded-lg bg-orange/10 flex items-center justify-center">
-                  <Mic className="w-4 h-4 text-orange" />
-                </div>
-                Voice Enabled
-              </div>
+              100% Private
             </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="appStore" size="xl" asChild>
-                <a 
-                  href="https://apps.apple.com/us/app/private-mind-offline-ai-chat/id6754819594" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="gap-3"
-                >
-                  <Apple className="w-6 h-6" />
-                  Download on App Store
-                </a>
-              </Button>
-              <Button variant="heroOutline" size="xl" asChild>
-                <a href="#features">
-                  Explore Features
-                </a>
-              </Button>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="w-8 h-8 rounded-lg bg-purple/10 flex items-center justify-center">
+                <Zap className="w-4 h-4 text-purple" />
+              </div>
+              Blazing Fast
+            </div>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="w-8 h-8 rounded-lg bg-orange/10 flex items-center justify-center">
+                <Mic className="w-4 h-4 text-orange" />
+              </div>
+              Voice Enabled
             </div>
           </div>
 
-          {/* Hero Image */}
-          <div className="relative flex justify-center lg:justify-end animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <div className="relative">
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-radial from-primary/20 via-accent/10 to-transparent blur-2xl scale-150" />
-              
-              {/* Mascot Image */}
-              <img 
-                src={heroMascot} 
-                alt="PrivateMind AI Cat Mascot" 
-                className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl animate-float drop-shadow-2xl"
-              />
-            </div>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button variant="appStore" size="xl" asChild>
+              <a 
+                href="https://apps.apple.com/us/app/private-mind-offline-ai-chat/id6754819594" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="gap-3"
+              >
+                <Apple className="w-6 h-6" />
+                Download on App Store
+              </a>
+            </Button>
+            <Button variant="heroOutline" size="xl" asChild>
+              <a href="#features">
+                Explore Features
+              </a>
+            </Button>
           </div>
         </div>
       </div>
