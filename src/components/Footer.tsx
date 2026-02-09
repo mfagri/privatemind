@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="w-10 h-10 rounded-xl bg-muted border border-border flex items-center justify-center">
               <Shield className="w-5 h-5 text-primary" />
             </div>
-            <span className="text-lg font-bold text-foreground">PrivateMind</span>
+            <span className="text-lg font-bold text-foreground">Meo AI Art</span>
           </div>
 
           {/* Links */}
@@ -32,13 +32,13 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-sm text-muted-foreground">
-            © {currentYear} PrivateMind. All rights reserved.
+            © {currentYear} Meo AI Art. All rights reserved.
           </p>
         </div>
 
         <div className="mt-8 pt-8 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
-            Your private AI assistant. No data collection. No cloud processing. Just you and your thoughts.
+            Your AI art generator. Create stunning images powered by artificial intelligence.
           </p>
         </div>
       </div>
