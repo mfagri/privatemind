@@ -58,7 +58,7 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="appStore" size="xl" asChild>
               <a 
-                href="https://apps.apple.com/us/app/private-mind-offline-ai-chat/id6754819594" 
+                href="https://apps.apple.com/us/app/meo-ai-art-image-generator/id6755818360" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="gap-3"

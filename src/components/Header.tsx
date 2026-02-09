@@ -40,7 +40,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button variant="hero" size="default" asChild>
-              <a href="https://apps.apple.com/us/app/private-mind-offline-ai-chat/id6754819594" target="_blank" rel="noopener noreferrer">
+              <a href="https://apps.apple.com/us/app/meo-ai-art-image-generator/id6755818360" target="_blank" rel="noopener noreferrer">
                 Download App
               </a>
             </Button>
@@ -71,7 +71,7 @@ const Header = () => {
                 </a>
               ))}
               <Button variant="hero" className="mt-2" asChild>
-                <a href="https://apps.apple.com/us/app/private-mind-offline-ai-chat/id6754819594" target="_blank" rel="noopener noreferrer">
+                <a href="https://apps.apple.com/us/app/meo-ai-art-image-generator/id6755818360" target="_blank" rel="noopener noreferrer">
                   Download App
                 </a>
               </Button>

@@ -61,7 +61,7 @@ const DownloadSection = () => {
           >
             <Button variant="appStore" size="xl" asChild className="text-lg px-12">
               <a 
-                href="https://apps.apple.com/us/app/private-mind-offline-ai-chat/id6754819594" 
+                href="https://apps.apple.com/us/app/meo-ai-art-image-generator/id6755818360" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="gap-3"
