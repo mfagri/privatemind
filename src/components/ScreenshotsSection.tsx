@@ -85,11 +85,11 @@ const ScreenshotsSection = () => {
         >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">App Preview</span>
           <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">
-            See PrivateMind in{" "}
+            See Meo AI Art in{" "}
             <span className="text-gradient-primary">Action</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Explore the intuitive interface and powerful features that make PrivateMind your perfect offline AI companion.
+            Explore the intuitive interface and powerful features that make Meo AI Art your perfect AI art companion.
           </p>
         </div>
 

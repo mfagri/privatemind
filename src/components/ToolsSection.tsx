@@ -75,7 +75,7 @@ const ToolsSection = () => {
             <span className="text-gradient-purple">Fingertips</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            PrivateMind comes packed with specialized AI tools designed to boost your productivity — all working completely offline.
+            Meo AI Art comes packed with specialized AI tools designed to boost your creativity — all working completely offline.
           </p>
         </div>
 

@@ -49,7 +49,7 @@ const DownloadSection = () => {
             }`}
             style={{ transitionDelay: "300ms" }}
           >
-            Download PrivateMind today and experience the freedom of AI that truly respects your privacy.
+            Download Meo AI Art today and start creating stunning AI-generated artwork.
           </p>
 
           {/* Download button */}

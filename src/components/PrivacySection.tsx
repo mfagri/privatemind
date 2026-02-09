@@ -27,7 +27,7 @@ const PrivacySection = () => {
                 <span className="text-gradient-primary">Yours</span>
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                Unlike cloud-based AI assistants, PrivateMind runs entirely on your device. We built it this way because we believe your thoughts and conversations are private — period.
+                Unlike cloud-based AI tools, Meo AI Art runs entirely on your device. We built it this way because we believe your creations and data are private — period.
               </p>
             </div>
 
@@ -98,7 +98,7 @@ const PrivacySection = () => {
                 <div className="space-y-4">
                   <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
                     <Lock className="w-5 h-5 text-primary" />
-                    PrivateMind
+                    Meo AI Art
                   </h3>
                   <div className="grid grid-cols-2 gap-3">
                     {["On-device AI", "No internet needed", "Zero data sent", "100% private"].map((item) => (

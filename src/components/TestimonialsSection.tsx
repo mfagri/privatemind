@@ -15,7 +15,7 @@ const testimonials = [
     name: "James T.",
     role: "Frequent Traveler",
     rating: 5,
-    quote: "I use PrivateMind on long flights all the time. No Wi-Fi needed, instant responses. It's become my go-to travel companion for notes and translations.",
+    quote: "I use Meo AI Art on long flights all the time. No Wi-Fi needed, instant responses. It's become my go-to travel companion for creating art.",
     highlight: "No Wi-Fi needed",
   },
   {
@@ -23,7 +23,7 @@ const testimonials = [
     name: "Dr. Emily Chen",
     role: "Healthcare Professional",
     rating: 5,
-    quote: "Patient confidentiality is paramount in my field. PrivateMind lets me use AI assistance without any compliance concerns. Absolutely brilliant.",
+    quote: "Patient confidentiality is paramount in my field. Meo AI Art lets me use AI assistance without any compliance concerns. Absolutely brilliant.",
     highlight: "no compliance concerns",
   },
   {
@@ -39,7 +39,7 @@ const testimonials = [
     name: "Anna K.",
     role: "Journalist",
     rating: 5,
-    quote: "As a journalist, source protection is critical. PrivateMind gives me AI capabilities without exposing my research or contacts. Game changer.",
+    quote: "As a journalist, source protection is critical. Meo AI Art gives me AI capabilities without exposing my research or contacts. Game changer.",
     highlight: "source protection",
   },
   {

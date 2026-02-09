@@ -24,8 +24,8 @@ const HeroSection = () => {
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
-            Your Private{" "}
-            <span className="text-gradient-primary">AI Assistant</span>
+            Your AI{" "}
+            <span className="text-gradient-primary">Art Generator</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">

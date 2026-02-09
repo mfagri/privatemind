@@ -29,7 +29,7 @@ const features = [
   {
     icon: Wifi,
     title: "Works Offline",
-    description: "No internet required. Use PrivateMind anywhere — on flights, in remote areas, or when you want to disconnect.",
+    description: "No internet required. Use Meo AI Art anywhere — on flights, in remote areas, or when you want to disconnect.",
     gradient: "gradient-border-green",
     iconBg: "bg-green/10",
     iconColor: "text-green",
@@ -72,7 +72,7 @@ const FeaturesSection = () => {
             <span className="text-gradient-primary">Privacy</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            PrivateMind combines powerful AI capabilities with uncompromising privacy protection. Everything runs locally on your device.
+            Meo AI Art combines powerful AI capabilities with uncompromising privacy protection. Everything runs locally on your device.
           </p>
         </div>
 

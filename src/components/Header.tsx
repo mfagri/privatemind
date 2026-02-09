@@ -21,7 +21,7 @@ const Header = () => {
             <div className="w-10 h-10 rounded-xl bg-card border border-border flex items-center justify-center group-hover:border-primary/50 transition-colors">
               <Shield className="w-5 h-5 text-primary" />
             </div>
-            <span className="text-lg font-bold text-foreground">PrivateMind</span>
+            <span className="text-lg font-bold text-foreground">Meo AI Art</span>
           </a>
 
           {/* Desktop Navigation */}
