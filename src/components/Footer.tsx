@@ -21,7 +21,7 @@ const Footer = () => {
             <a href="#tools" className="hover:text-foreground transition-colors">AI Tools</a>
             <a href="#privacy" className="hover:text-foreground transition-colors">Privacy</a>
             <a 
-              href="https://apps.apple.com/us/app/private-mind-offline-ai-chat/id6754819594" 
+              href="https://apps.apple.com/us/app/meo-ai-art-image-generator/id6755818360" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-foreground transition-colors"
